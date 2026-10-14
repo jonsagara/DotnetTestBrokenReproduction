@@ -1,12 +1,12 @@
-# `dotnet test path/to/project.csproj` no longer works in .NET 11 RC1
+# `dotnet test path/to/project.csproj` no longer works in .NET 11 RC 1 and RC 2
 
-After upgrading to .NET 11 RC1, running `dotnet test` from the command line in the solution root no longer works. To reproduce:
+After upgrading to .NET 11 RC 1 and 2, running `dotnet test` from the command line in the solution root no longer works. To reproduce:
 
 1. Clone this repository
-1. Switch to branch `feature/net11rc1`
+1. Switch to branch `feature/net11rc1` or `feature/net11rc2`
 1. From the solution root, try to run `dotnet test`
 
-## Commands run successfully with .NET SDK 10.0.401:
+## Commands run successfully with .NET SDK 10.0.402:
 
 Switch to branch `main`.
 
@@ -52,9 +52,9 @@ Test run summary: Passed!
   duration: 633ms
 ```
 
-## Commands run unsuccessfully with .NET 11 RC1:
+## Commands run unsuccessfully with .NET 11 RC 1 or 2:
 
-Switch to branch `feature/net11rc1`.
+Switch to branch `feature/net11rc1` or `feature/net11rc2`.
 
 ```
 > dotnet test src/AwesomeLibrary.Tests/AwesomeLibrary.Tests.csproj
@@ -73,7 +73,7 @@ As you can see in the output, something is mangling the path, repeating `src\Awe
 
 ## Expected Behavior
 
-Both of these commands succeed in .NET 11 RC 1:
+Both of these commands succeed in .NET 11 RC 1 and 2:
 
 `dotnet test src/AwesomeLibrary.Tests/AwesomeLibrary.Tests.csproj`
 
@@ -82,7 +82,7 @@ Both of these commands succeed in .NET 11 RC 1:
 
 ## Actual Behavior
 
-Both of these commands fail in .NET 11 RC 1 with the following exception:
+Both of these commands fail in .NET 11 RC 1 and 2 with the following exception:
 
 > Unhandled exception: The project file could not be loaded. Could not find a part of the path 'C:\Dev\SANDBOX\AwesomeLibrary\src\AwesomeLibrary.Tests\src\AwesomeLibrary.Tests\AwesomeLibrary.Tests.csproj'.  C:\Dev\SANDBOX\AwesomeLibrary\src\AwesomeLibrary.Tests\src\AwesomeLibrary.Tests\AwesomeLibrary.Tests.csproj
 
