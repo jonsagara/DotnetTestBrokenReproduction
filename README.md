@@ -1,3 +1,12 @@
+# 🎉 This is fixed in .NET SDK 11.0.100 🎉
+
+[GitHub Issue](https://github.com/dotnet/sdk/issues/56196)
+
+Original README contents below.
+
+---
+
+
 # `dotnet test path/to/project.csproj` no longer works in .NET 11 RC 1 and RC 2
 
 After upgrading to .NET 11 RC 1 and 2, running `dotnet test` from the command line in the solution root no longer works. To reproduce:
